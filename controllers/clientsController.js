@@ -64,4 +64,5 @@ exports.deleteClient = (req, res) => {
     db.saveClients(clients);
 
     res.json({ message: "Client deleted successfully" });
+    
 };
