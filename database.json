@@ -18,5 +18,14 @@
       "role": "admin",
       "status": "active"
     }
+  ],
+  "clients": [
+    {
+      "id": 1738682459360,
+      "name": "Cliente Prueba",
+      "email": "cliente@example.com",
+      "phone": "555-1234",
+      "status": "active"
+    }
   ]
 }

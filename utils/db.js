@@ -17,3 +17,10 @@ const writeDB = (data) => {
 
 exports.getUsers = () => readDB().users;
 exports.saveUsers = (users) => writeDB({ users });
+
+exports.getClients = () => readDB().clients;
+exports.saveClients = (clients) => {
+    const db = readDB();
+    db.clients = clients;
+    writeDB(db);
+};
