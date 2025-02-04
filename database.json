@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 1738666746528,
+      "email": "usuario@example.com",
+      "password": "$2b$10$Y4sQk70aW0UyAQ4HESURQesbt5EiV1GTij/I9ESnLpQUizpuPeHpu",
+      "name": "Juan Pérez",
+      "phone": "3314857062",
+      "role": "admin",
+      "status": "active"
+    },
+    {
+      "id": 1738667282612,
+      "email": "admin@example.com",
+      "password": "$2b$10$3HLML84dAzVue9rW5wLoHOAVm5Ia5SY4EBmughPhk0uRGaTK9tfp.",
+      "name": "Juan Pérez",
+      "phone": "3314857062",
+      "role": "admin",
+      "status": "active"
+    }
+  ]
+}
