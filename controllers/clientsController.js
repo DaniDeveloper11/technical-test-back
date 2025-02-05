@@ -1,7 +1,7 @@
 const db = require("../utils/db");
 
 const getClients = (req, res) => {
-    const userId = req.user?.id; // Obtener el ID del usuario autenticado
+    const userId = req.user?.id; 
 
     if (!userId) {
         return res.status(401).json({ message: "Unauthorized: Missing user ID" });
