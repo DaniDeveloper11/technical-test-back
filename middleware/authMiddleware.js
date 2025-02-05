@@ -17,4 +17,4 @@ const authenticateUser = (req, res, next) => {
     }
 };
 
-module.exports = authenticateUser; // 👈 Asegurar que está exportado correctamente
+module.exports = authenticateUser; 
