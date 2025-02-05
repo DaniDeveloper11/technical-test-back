@@ -18,5 +18,6 @@
       "role": "usuario",
       "status": "active"
     }
-  ]
+  ],
+  "client":[]
 }
