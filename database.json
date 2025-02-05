@@ -4,16 +4,16 @@
       "id": 1738755096402,
       "email": "admin@example.com",
       "password": "$2b$10$bY..HHtq5AJFHlKO2VVuR.y8Wv0BPsNx9M9oquWwsLOIL8lSGRiiq",
-      "name": "Angel Daniel",
+      "name": "Daniel Montes",
       "phone": "3314857062",
       "role": "admin",
       "status": "active"
     },
     {
       "id": 1738757124937,
-      "email": "usuario@example.com",
+      "email": "user@example.com",
       "password": "$2b$10$ooPdQ2dIodxtGPaSielDNOefv0fLpY6xv1x3pon0DME0OPeldj9vS",
-      "name": "Angel Daniel",
+      "name": "Angel Villarreal",
       "phone": "3314857062",
       "role": "usuario",
       "status": "active"
@@ -33,6 +33,14 @@
       "name": "Denis Guadalupe",
       "email": "denis@correo.com",
       "phone": "3314785522",
+      "status": "active",
+      "userId": 1738755096402
+    },
+    {
+      "id": 1738765715814,
+      "name": "Usuario nuevo",
+      "email": "nuevo@correo.com",
+      "phone": "3311445566",
       "status": "active",
       "userId": 1738755096402
     }

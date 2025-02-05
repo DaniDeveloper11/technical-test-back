@@ -1,6 +1,6 @@
 const express = require("express");
-const clientsController = require("../controllers/clientsController.js"); // Importación correcta
-const authenticateUser = require("../middleware/authMiddleware.js"); // Importación correcta
+const clientsController = require("../controllers/clientsController.js"); 
+const authenticateUser = require("../middleware/authMiddleware.js"); 
 
 console.log("clientsController:", clientsController);
 console.log("authenticateUser:", authenticateUser);
