@@ -1,33 +1,44 @@
 const db = require("../utils/db");
 
-// Obtener todos los clientes
-exports.getClients = (req, res) => {
-    const clients = db.getClients();
-    res.json(clients);
-};
+const getClients = (req, res) => {
+    const userId = req.user?.id; // Obtener el ID del usuario autenticado
 
-// Obtener un cliente por ID
-exports.getClientById = (req, res) => {
-    const clients = db.getClients();
-    const client = clients.find(c => c.id === parseInt(req.params.id));
-
-    if (!client) {
-        return res.status(404).json({ message: "Client not found" });
+    if (!userId) {
+        return res.status(401).json({ message: "Unauthorized: Missing user ID" });
     }
 
+    console.log("User ID en getClients:", userId); 
+
+    const clients = db.getClients();
+    console.log("Clientes antes de filtrar:", clients); 
+
+    const filteredClients = clients.filter(client => client.userId === userId);
+    console.log("Clientes después de filtrar:", filteredClients); 
+
+    res.json(filteredClients);
+};
+
+const getClientById = (req, res) => {
+    const clients = db.getClients();
+    const client = clients.find(c => c.id === parseInt(req.params.id));
+    if (!client) return res.status(404).json({ message: "Client not found" });
     res.json(client);
 };
 
-// Crear un nuevo cliente
-exports.createClient = (req, res) => {
+const createClient = (req, res) => {
     const { name, email, phone, status } = req.body;
+    const userId = req.user?.id; // 👈 Asegurar que `req.user.id` existe
+
+    if (!userId) {
+        return res.status(401).json({ message: "Unauthorized: Missing user ID" });
+    }
 
     if (!name || !email || !phone || !status) {
         return res.status(400).json({ message: "All fields are required" });
     }
 
     const clients = db.getClients();
-    const newClient = { id: Date.now(), name, email, phone, status };
+    const newClient = { id: Date.now(), name, email, phone, status, userId }; // 👈 Agregar `userId`
 
     clients.push(newClient);
     db.saveClients(clients);
@@ -35,34 +46,24 @@ exports.createClient = (req, res) => {
     res.status(201).json({ message: "Client created successfully", client: newClient });
 };
 
-// Actualizar un cliente por ID
-exports.updateClient = (req, res) => {
+
+const updateClient = (req, res) => {
     const clients = db.getClients();
     const index = clients.findIndex(c => c.id === parseInt(req.params.id));
-
-    if (index === -1) {
-        return res.status(404).json({ message: "Client not found" });
-    }
-
-    const updatedClient = { ...clients[index], ...req.body };
-    clients[index] = updatedClient;
+    if (index === -1) return res.status(404).json({ message: "Client not found" });
+    clients[index] = { ...clients[index], ...req.body };
     db.saveClients(clients);
-
-    res.json({ message: "Client updated successfully", client: updatedClient });
+    res.json({ message: "Client updated successfully", client: clients[index] });
 };
 
-// Eliminar un cliente por ID
-exports.deleteClient = (req, res) => {
+const deleteClient = (req, res) => {
     let clients = db.getClients();
     const index = clients.findIndex(c => c.id === parseInt(req.params.id));
-
-    if (index === -1) {
-        return res.status(404).json({ message: "Client not found" });
-    }
-
+    if (index === -1) return res.status(404).json({ message: "Client not found" });
     clients.splice(index, 1);
     db.saveClients(clients);
-
     res.json({ message: "Client deleted successfully" });
-    
 };
+
+// Exportar correctamente
+module.exports = { getClients, getClientById, createClient, updateClient, deleteClient };

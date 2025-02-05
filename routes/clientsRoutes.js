@@ -1,18 +1,18 @@
 const express = require("express");
-const {
-    getClients,
-    getClientById,
-    createClient,
-    updateClient,
-    deleteClient
-} = require("../controllers/clientsController");
+const clientsController = require("../controllers/clientsController.js"); // Importación correcta
+const authenticateUser = require("../middleware/authMiddleware.js"); // Importación correcta
+
+console.log("clientsController:", clientsController);
+console.log("authenticateUser:", authenticateUser);
+
 
 const router = express.Router();
 
-router.get("/", getClients);
-router.get("/:id", getClientById);
-router.post("/", createClient);
-router.put("/:id", updateClient);
-router.delete("/:id", deleteClient);
+// Definir las rutas asegurando que las funciones existen
+router.get("/", authenticateUser, clientsController.getClients);
+router.get("/:id", authenticateUser, clientsController.getClientById);
+router.post("/", authenticateUser, clientsController.createClient);
+router.put("/:id", authenticateUser, clientsController.updateClient);
+router.delete("/:id", authenticateUser, clientsController.deleteClient);
 
 module.exports = router;

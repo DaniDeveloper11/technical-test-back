@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-module.exports = (req, res, next) => {
+const authenticateUser = (req, res, next) => {
     const token = req.header("Authorization");
     
     if (!token) {
@@ -10,8 +10,11 @@ module.exports = (req, res, next) => {
     try {
         const decoded = jwt.verify(token.replace("Bearer ", ""), process.env.JWT_SECRET);
         req.user = decoded;
+        console.log("Usuario autenticado en middleware:", req.user);
         next();
     } catch (error) {
         res.status(401).json({ message: "Invalid token" });
     }
 };
+
+module.exports = authenticateUser; // 👈 Asegurar que está exportado correctamente

@@ -1,31 +1,40 @@
 {
   "users": [
     {
-      "id": 1738666746528,
-      "email": "usuario@example.com",
-      "password": "$2b$10$Y4sQk70aW0UyAQ4HESURQesbt5EiV1GTij/I9ESnLpQUizpuPeHpu",
-      "name": "Juan Pérez",
+      "id": 1738755096402,
+      "email": "admin@example.com",
+      "password": "$2b$10$bY..HHtq5AJFHlKO2VVuR.y8Wv0BPsNx9M9oquWwsLOIL8lSGRiiq",
+      "name": "Angel Daniel",
       "phone": "3314857062",
       "role": "admin",
       "status": "active"
     },
     {
-      "id": 1738667282612,
-      "email": "admin@example.com",
-      "password": "$2b$10$3HLML84dAzVue9rW5wLoHOAVm5Ia5SY4EBmughPhk0uRGaTK9tfp.",
-      "name": "Juan Pérez",
+      "id": 1738757124937,
+      "email": "usuario@example.com",
+      "password": "$2b$10$ooPdQ2dIodxtGPaSielDNOefv0fLpY6xv1x3pon0DME0OPeldj9vS",
+      "name": "Angel Daniel",
       "phone": "3314857062",
-      "role": "admin",
+      "role": "usuario",
       "status": "active"
     }
   ],
   "clients": [
     {
-      "id": 1738682459360,
-      "name": "Cliente Prueba",
-      "email": "cliente@example.com",
-      "phone": "555-1234",
-      "status": "active"
+      "id": 1738761453239,
+      "name": "Angel Daniel Montes ",
+      "email": "angel@correo.com",
+      "phone": "3314857062",
+      "status": "active",
+      "userId": 1738757124937
+    },
+    {
+      "id": 1738761990200,
+      "name": "Denis Guadalupe",
+      "email": "denis@correo.com",
+      "phone": "3314785522",
+      "status": "active",
+      "userId": 1738755096402
     }
   ]
 }
