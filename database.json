@@ -10,39 +10,13 @@
       "status": "active"
     },
     {
-      "id": 1738757124937,
+      "id": 1738766880838,
       "email": "user@example.com",
-      "password": "$2b$10$ooPdQ2dIodxtGPaSielDNOefv0fLpY6xv1x3pon0DME0OPeldj9vS",
-      "name": "Angel Villarreal",
+      "password": "$2b$10$LT51saoTfo0BNqARS7QJju3jf8.TgB0kn5Jd91yZHGbx9VxMjSD0G",
+      "name": "Angel Daniel",
       "phone": "3314857062",
       "role": "usuario",
       "status": "active"
-    }
-  ],
-  "clients": [
-    {
-      "id": 1738761453239,
-      "name": "Angel Daniel Montes ",
-      "email": "angel@correo.com",
-      "phone": "3314857062",
-      "status": "active",
-      "userId": 1738757124937
-    },
-    {
-      "id": 1738761990200,
-      "name": "Denis Guadalupe",
-      "email": "denis@correo.com",
-      "phone": "3314785522",
-      "status": "active",
-      "userId": 1738755096402
-    },
-    {
-      "id": 1738765715814,
-      "name": "Usuario nuevo",
-      "email": "nuevo@correo.com",
-      "phone": "3311445566",
-      "status": "active",
-      "userId": 1738755096402
     }
   ]
 }
